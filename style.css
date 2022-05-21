@@ -1,0 +1,96 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background-color: rgb(255, 159, 159);
+}
+
+.game{
+    margin: auto;
+    margin-top: 190px;
+    border: 3px solid black;
+    width:750px;
+    height:350px;
+    background-color: rgb(178, 242, 255);
+}
+
+.character{
+    width: 120px;
+    height: 140px;
+    top:210px;
+    position: relative;
+}
+
+.animate{
+    animation: jump 500ms;
+}
+
+.obstacle{
+    width:40px;
+    height:40px;
+    background-color: green;
+    position: relative;
+    top:162px;
+    left:705px;
+    animation: block 1s infinite linear;
+}
+
+input{
+    padding: 5px;
+    margin:2px;
+    color:black;
+    background-color: red;
+    border-radius: 5px;
+    border: 1px solid black;
+    width:100px;
+    font-size: 15px;
+}
+
+@keyframes block{
+    0%{left:705px;}
+    100%{left:-1px;}
+}
+
+@keyframes jump{
+    0%{top:210px;}
+    50%{top:140px;}
+    100%{top: 210px;}
+}
+
+
+@media (max-width: 480px){
+    .game{
+        width: 410px;
+        height: 260px;
+    }
+
+    .character{
+        width: 120px;
+        height: 120px;
+        top:140px;
+        position: relative;
+    }
+
+    .obstacle{
+        width:30px;
+        height:30px;
+        top:102px;
+        left:365px;
+        animation: block 0.8s infinite linear;
+    }
+
+    @keyframes jump{
+        0%{top:140px;}
+        50%{top:80px;}
+        100%{top: 140px;}
+    }
+
+    @keyframes block{
+        0%{left:400px;}
+        100%{left:-1px;}
+    }
+
+}
